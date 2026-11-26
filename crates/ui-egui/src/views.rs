@@ -219,14 +219,6 @@ impl LauncherUi {
                     ui.allocate_ui_with_layout(vec2(width, h), egui::Layout::left_to_right(egui::Align::Center), |ui| self.channel_navigation(ui));
                     ui.add_space(theme::PAD / 2.0);
                 }
-                // The controls reserve their actual widths before the secondary text gets space.
-                ui.with_layout(egui::Layout::left_to_right(egui::Align::Center), |ui| {
-                    if ui.available_width() >= 17.0 + widgets::hud_galley(ui, tl!("Craft App Suite"), t.muted).size().x {
-                        widgets::rule(ui, h);
-                        ui.add_space(16.0);
-                        widgets::hud(ui, tl!("Craft App Suite"), t.muted);
-                    }
-                });
             });
         });
     }
@@ -1567,7 +1559,7 @@ enum PinDropAxis {
 
 /// The pages the toolbar's toggle offers, in order: the Craft App Suite, then Fonts (desktop only).
 fn pages() -> Vec<(Page, widgets::Cell<'static>)> {
-    let mut pages = vec![(Page::Apps, widgets::Cell { label: tl!("Apps"), tip: tl!("Craft App Suite"), count: None })];
+    let mut pages = vec![(Page::Apps, widgets::Cell { label: tl!("Apps"), tip: tl!("Apps"), count: None })];
     if cfg!(not(target_arch = "wasm32")) {
         pages.push((Page::Fonts, widgets::Cell { label: tl!("Fonts"), tip: tl!("Fonts for every Craft app"), count: None }));
     }
