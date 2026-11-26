@@ -202,7 +202,9 @@ pub const DISCORD_APP_URL: &str = "https://github.com/mclsrr/design-system/issue
 /// machinery (asset names `artcraft-launcher-<ver>-…`, bundle id `ai.storyteller.artcraft-launcher`,
 /// `Design System.app`). Not part of [`SUITE`].
 pub const LAUNCHER: CraftApp = app(
-    "artcraft-launcher",
+    // The same id as LAUNCHER_ID: the update check recognises the launcher's own release by it, and
+    // its download is design-system-<version>-windows-x64.msi.
+    LAUNCHER_ID,
     "Design System",
     "Installs and updates your apps",
     [[0x0b, 0x0b, 0x0c], [0x0b, 0x0b, 0x0c], [0xf2, 0xf1, 0xee]],

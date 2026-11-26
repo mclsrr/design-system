@@ -940,7 +940,7 @@ pub fn more_menu<R>(ui: &mut Ui, app_name: &str, add_contents: impl FnOnce(&mut 
 pub fn social_icons(ui: &mut Ui, size: f32) {
     let links: Vec<IconLink> = artcraft_launcher_core::catalog::SOCIAL
         .iter()
-        .map(|(name, url)| IconLink { name, label: (*name).to_string(), tip: crate::i18n::fmt(tl!("{name}"), &[("name", name)]), url })
+        .map(|(name, url)| IconLink { name, label: (*name).to_string(), tip: (*name).to_string(), url })
         .collect();
     icon_links(ui, size, &links);
 }
