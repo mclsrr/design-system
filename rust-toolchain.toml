@@ -1,0 +1,4 @@
+# Same Rust as PhotoCraft, so one toolchain builds both.
+[toolchain]
+channel = "1.100.0"
+components = ["clippy", "rustfmt"]

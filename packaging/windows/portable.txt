@@ -1,0 +1,9 @@
+Design System portable mode
+
+While this file sits next to artcraft-launcher.exe, Design System keeps its settings, its
+download cache and its record of installed apps in the DesignSystemData folder beside it, and
+writes nothing to %APPDATA%. Copy the whole folder to move Design System with its settings.
+
+Delete this file to use the normal per-user settings folder (%APPDATA%\Design System) instead.
+If DesignSystemData can't be written (for example on a read-only drive), Design System says
+so and uses %APPDATA%\Design System instead.

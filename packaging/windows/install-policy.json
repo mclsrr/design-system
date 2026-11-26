@@ -1,0 +1,54 @@
+{
+  "id": "artcraft-launcher",
+  "name": "Design System",
+  "mode": "perUser",
+  "upgradeCode": "5B7E2C1A-93D4-4F6E-8A21-6C0F3E9D7B42",
+  "sources": [
+    "artcraft-launcher.wxs"
+  ],
+  "icon": "assets/app-icon/artcraft-launcher.ico",
+  "localization": [
+    "artcraft-launcher.en-us.wxl"
+  ],
+  "extensions": [
+    "UI",
+    "Util"
+  ],
+  "payloads": [
+    "NOTICE",
+    "artcraft-launcher.exe",
+    "craft-ai-mcp.exe"
+  ],
+  "registry": [
+    [
+      "1",
+      "Software\\mclsrr\\Design System",
+      "InstallDir",
+      "[INSTALLFOLDER]"
+    ],
+    [
+      "1",
+      "Software\\mclsrr\\Design System",
+      "DesktopShortcutChoice",
+      "[DESKTOPSHORTCUTCHOICE]"
+    ],
+    [
+      "1",
+      "Software\\Microsoft\\Windows\\CurrentVersion\\App Paths\\artcraft-launcher.exe",
+      "",
+      "[#ArtCraftLauncherExe]"
+    ],
+    [
+      "1",
+      "Software\\mclsrr\\Design System",
+      "StartMenuShortcut",
+      "#1"
+    ],
+    [
+      "1",
+      "Software\\mclsrr\\Design System",
+      "DesktopShortcut",
+      "#1"
+    ]
+  ]
+}

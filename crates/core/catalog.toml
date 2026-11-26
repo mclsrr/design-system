@@ -1,0 +1,44 @@
+# Design System: the apps this launcher lists, installs and updates.
+#
+# Each app is a GitHub repository under mclsrr whose releases carry the Windows installer as
+#   <id>-<version>-windows-x64.msi   (and a SHA256SUMS.txt with its checksum)
+# The launcher reads only GitHub (no other catalog or feed). To add an app:
+#   1. Copy an [[apps]] block below and change id, name, tagline, colors and repo.
+#   2. Put its 128 px icon at assets/app-icons/<id>.png (the Craft apps' icons are already there).
+#   3. Publish a new Design System release: every installed launcher updates itself and shows the
+#      new app. See GUIA_GITHUB.md.
+#
+# Fields: id = repo, binary and asset name (lowercase); name = display name; repo = "owner/name";
+# kind = "official" (yours) or "community"; msi_publisher = the Manufacturer its MSI records.
+
+[[apps]]
+id = "photocraft"
+name = "PhotoCraft"
+tagline = "Image editing"
+color = [47, 123, 245]
+ink_light = [26, 91, 196]
+ink_dark = [127, 176, 255]
+repo = "mclsrr/photocraft"
+former_ids = []
+former_names = []
+former_bundles = []
+kind = "official"
+publisher = "mclsrr"
+msi_publisher = "Learning Machines LLC"
+bundle = "ai.storyteller.photocraft"
+site = "https://github.com/mclsrr/photocraft"
+mac_bundle_name = "PhotoCraft"
+
+[apps.details]
+headline = "Image editing with layers, masks and real PSD files."
+about = "Layers, masks, adjustment layers, layer styles, type, vectors and brushes in a native app. Open source and offline.\n\nThis build includes floating document windows that stay above the main window and pen barrel buttons that act as a right click."
+platforms = "Windows"
+[[apps.details.features]]
+title = "Native GPU canvas"
+text = "No Electron and no web view: a fast native compositor."
+[[apps.details.features]]
+title = "Real layered files"
+text = "Opens and saves layered PSD and PSB documents."
+[[apps.details.features]]
+title = "Non-destructive editing"
+text = "Adjustment layers, live-preview filters, smart objects and layer styles."

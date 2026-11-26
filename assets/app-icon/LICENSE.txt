@@ -1,0 +1,1 @@
+Design System app icon (every file in this directory): original artwork made for Design System, licensed MIT OR Apache-2.0 like the rest of the repository.
