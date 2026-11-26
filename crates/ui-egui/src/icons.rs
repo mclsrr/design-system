@@ -77,33 +77,33 @@ pub fn bell() -> ImageSource<'static> {
     egui::include_image!("../../../assets/ui-icons/bell.svg")
 }
 
-/// The Design System mark (a 2x2 grid of blocks): the launcher's app icon without its tile.
+/// The Design System launcher icon.
 pub fn artcraft_mark() -> ImageSource<'static> {
-    egui::include_image!("../../../docs/brand/design-system-mark.svg")
+    egui::include_image!("../../../assets/app-icon/hicolor/128x128/apps/ai.storyteller.artcraft-launcher.png")
 }
 
 /// Deep-background nightly artwork for every bundled official catalog app.
 /// Community or future unknown brands retain their supplied artwork, never a runtime tint.
 fn nightly_app(id: &str) -> Option<ImageSource<'static>> {
     Some(match id {
-        "photocraft" => egui::include_image!("../../../assets/nightly-icons/photocraft.png"),
-        "vectorcraft" => egui::include_image!("../../../assets/nightly-icons/vectorcraft.png"),
+        "photocraft" => egui::include_image!("../../../assets/app-icons/photocraft.png"),
+        "vectorcraft" => egui::include_image!("../../../assets/app-icons/vectorcraft.png"),
         "filmcraft" => egui::include_image!("../../../assets/nightly-icons/filmcraft.png"),
         "lightcraft" => egui::include_image!("../../../assets/nightly-icons/lightcraft.png"),
-        "pdfcraft" => egui::include_image!("../../../assets/nightly-icons/pdfcraft.png"),
+        "pdfcraft" => egui::include_image!("../../../assets/app-icons/pdfcraft.png"),
         "effectcraft" => egui::include_image!("../../../assets/nightly-icons/effectcraft.png"),
         "anicraft" => egui::include_image!("../../../assets/nightly-icons/anicraft.png"),
         "designcraft" => egui::include_image!("../../../assets/nightly-icons/designcraft.png"),
         "figcraft" => egui::include_image!("../../../assets/nightly-icons/figcraft.png"),
         "soundcraft" => egui::include_image!("../../../assets/nightly-icons/soundcraft.png"),
-        "wordcraft" => egui::include_image!("../../../assets/nightly-icons/wordcraft.png"),
+        "wordcraft" => egui::include_image!("../../../assets/app-icons/wordcraft.png"),
         "deckcraft" => egui::include_image!("../../../assets/nightly-icons/deckcraft.png"),
         "cadcraft" => egui::include_image!("../../../assets/nightly-icons/cadcraft.png"),
-        "gridcraft" => egui::include_image!("../../../assets/nightly-icons/gridcraft.png"),
+        "gridcraft" => egui::include_image!("../../../assets/app-icons/gridcraft.png"),
         "texturecraft" => egui::include_image!("../../../assets/nightly-icons/texturecraft.png"),
         "materialcraft" => egui::include_image!("../../../assets/nightly-icons/materialcraft.png"),
         "craft-anything" => egui::include_image!("../../../assets/nightly-icons/craft-anything.png"),
-        artcraft_launcher_core::catalog::LAUNCHER_ID => egui::include_image!("../../../assets/nightly-icons/artcraft-launcher.png"),
+        artcraft_launcher_core::catalog::LAUNCHER_ID => egui::include_image!("../../../assets/app-icon/hicolor/128x128/apps/ai.storyteller.artcraft-launcher.png"),
         _ => return app(id),
     })
 }

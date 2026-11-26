@@ -219,6 +219,9 @@ pub const LAUNCHER_ID: &str = "design-system";
 /// A Craft App's 128 px icon (PNG), as copied from its repo into `assets/app-icons`: the UI
 /// draws it, and the Linux install puts it in the desktop menu.
 pub fn app_icon_png(id: &str) -> Option<&'static [u8]> {
+    if matches!(id, "gridcraft" | "pdfcraft" | "photocraft" | "vectorcraft" | "wordcraft") {
+        return bundled_icon(id);
+    }
     if let Some(icon) = crate::hosted_catalog::icon(id) {
         return Some(icon);
     }
