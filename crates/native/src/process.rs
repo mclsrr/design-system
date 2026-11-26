@@ -186,6 +186,46 @@ pub fn spawn_detached(mut cmd: Command) -> Result<(), String> {
     Ok(())
 }
 
+/// The longest a [`prewarm`] run may take before it is stopped.
+const PREWARM_LIMIT: Duration = Duration::from_secs(90);
+
+/// Windows: runs a just-installed app's executable once, hidden, as `exe --version` (which every
+/// Craft app answers by printing its version and exiting), on its own thread. Windows Defender
+/// checks a program it has never seen against the cloud the first time it runs, about 10 s for an
+/// unsigned executable (measured: 9.8 s, then 0.8 s); doing that now, while the launcher shows
+/// the app as installed, keeps the wait out of the first time the person opens it. Elsewhere, or
+/// when `exe` isn't a file, it does nothing. Never fails: a run that can't start is only logged.
+pub fn prewarm(exe: &Path) {
+    if !cfg!(windows) || !exe.is_file() || !exe.extension().is_some_and(|e| e.eq_ignore_ascii_case("exe")) {
+        return;
+    }
+    let exe = exe.to_path_buf();
+    std::thread::spawn(move || {
+        let mut cmd = command(&exe);
+        cmd.arg("--version").stdin(Stdio::null()).stdout(Stdio::null()).stderr(Stdio::null());
+        if let Some(dir) = exe.parent() {
+            cmd.current_dir(dir);
+        }
+        let started = Instant::now();
+        let mut child = match cmd.spawn() {
+            Ok(child) => child,
+            Err(e) => return log::info!("couldn't pre-start {} ({e})", exe.display()),
+        };
+        loop {
+            match child.try_wait() {
+                Ok(Some(_)) => break,
+                Ok(None) if started.elapsed() < PREWARM_LIMIT => std::thread::sleep(Duration::from_millis(200)),
+                _ => {
+                    let _ = child.kill();
+                    let _ = child.wait();
+                    break;
+                }
+            }
+        }
+        log::info!("pre-started {} in {} ms", exe.display(), started.elapsed().as_millis());
+    });
+}
+
 /// Waits up to `timeout` for the process `pid` to exit, and says whether it has. A process that
 /// can't be opened, because it's gone or never was, counts as exited.
 #[cfg(windows)]

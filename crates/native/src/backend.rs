@@ -1841,6 +1841,13 @@ fn run_install(
             log::warn!("couldn't save the install record: {e}");
         }
     }
+    // Windows: the new copy runs once now, hidden, so its first opening doesn't wait for
+    // Defender's first-run check (`process::prewarm`).
+    if kind == PackageKind::Msi
+        && let Some(found) = shared.host.registered(app)
+    {
+        process::prewarm(std::path::Path::new(&found.location));
+    }
     Ok(installed_text(app, existing.is_some(), &release))
 }
 

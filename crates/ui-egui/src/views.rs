@@ -474,11 +474,7 @@ impl LauncherUi {
         // Every link is an icon, reading Website, GitHub, Discord, then the social accounts.
         let named =
             |name: &'static str, label: &str, url: &'static str| widgets::IconLink { name, label: label.to_string(), tip: label.to_string(), url };
-        let mut links = vec![
-            named("Website", tl!("Website"), WEBSITE_URL),
-            named("GitHub", tl!("GitHub"), GITHUB_URL),
-
-        ];
+        let mut links = vec![named("Website", tl!("Website"), WEBSITE_URL), named("GitHub", tl!("GitHub"), GITHUB_URL)];
         links.extend(SOCIAL.iter().map(|(name, url)| widgets::IconLink {
             name,
             label: (*name).to_string(),
