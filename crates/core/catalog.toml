@@ -42,3 +42,199 @@ text = "Opens and saves layered PSD and PSB documents."
 [[apps.details.features]]
 title = "Non-destructive editing"
 text = "Adjustment layers, live-preview filters, smart objects and layer styles."
+
+[[apps]]
+id = "vectorcraft"
+name = "VectorCraft"
+tagline = "Vector illustration"
+color = [232, 87, 63]
+ink_light = [184, 58, 36]
+ink_dark = [255, 138, 112]
+repo = "mclsrr/vectorcraft"
+former_ids = []
+former_names = []
+former_bundles = []
+kind = "official"
+publisher = "mclsrr"
+msi_publisher = "Learning Machines LLC"
+site = "https://github.com/mclsrr/vectorcraft"
+mac_bundle_name = "VectorCraft"
+
+[apps.details]
+headline = "Vector illustration, with familiar tools and editable effects."
+about = "A native vector illustration app with the pen, panels and shortcuts illustrators expect. Open source, and it also runs in a browser."
+platforms = "macOS, Windows, Linux, FreeBSD, web"
+[[apps.details.features]]
+text = "Pen, direct selection, shape booleans, snapping guides and an appearance panel, laid out the way you expect."
+title = "The workflow you know"
+[[apps.details.features]]
+text = "Drawings with thousands of shapes stay responsive on a retina display."
+title = "Genuinely fast"
+[[apps.details.features]]
+text = "Shape booleans work on the exact curves, so there is no \"cannot perform operation\", and undo is unlimited."
+title = "Booleans that don't fail"
+[[apps.details.features]]
+text = "Blends, envelope distort, gradient mesh, repeats, glows and drop shadows all stay editable."
+title = "Live, editable effects"
+[[apps.details.features]]
+text = "Turn raster images into clean vector paths, with presets for the common cases."
+title = "Image tracing"
+[[apps.details.features]]
+text = "Native JSON documents, SVG and PDF import and export, and PNG, JPEG and WebP output."
+title = "Open formats"
+[[apps.details.shots]]
+caption = "The Neon Drive poster"
+key = "neon"
+[[apps.details.shots]]
+caption = "Live blends"
+key = "ribbons"
+[[apps.details.shots]]
+caption = "A feature sheet and the Layers panel"
+key = "sheet"
+[[apps.details.shots]]
+caption = "Pathfinder and exact booleans"
+key = "bezier"
+
+[[apps]]
+id = "pdfcraft"
+name = "PdfCraft"
+tagline = "Reading, organizing and protecting PDFs"
+color = [232, 32, 79]
+ink_light = [183, 2, 40]
+ink_dark = [242, 58, 98]
+repo = "mclsrr/pdfcraft"
+former_ids = ["printcraft"]
+former_names = ["PrintCraft"]
+former_bundles = []
+kind = "official"
+publisher = "mclsrr"
+msi_publisher = "Learning Machines LLC"
+site = "https://github.com/mclsrr/pdfcraft"
+mac_bundle_name = "PdfCraft"
+
+[apps.details]
+headline = "The open-source PDF workbench."
+about = "Read, organize, combine, split and secure PDFs in a fast, native app. No account, no telemetry and no cloud."
+platforms = "macOS, Windows, Linux, FreeBSD, web"
+[[apps.details.features]]
+text = "World scripts, vertical Japanese, color emoji and transparency."
+title = "Faithful rendering"
+[[apps.details.features]]
+text = "Instant find, and text selection that follows the document's real reading order."
+title = "Search as you type"
+[[apps.details.features]]
+text = "Rotate, delete, insert and reorder pages, with deep undo behind every change."
+title = "Organize like cards"
+[[apps.details.features]]
+text = "Assemble and break apart documents while keeping links, form fields, layers and bookmarks intact."
+title = "Combine, extract, split"
+[[apps.details.features]]
+text = "Incremental, atomic saves with autosave and crash recovery."
+title = "Fearless saves"
+[[apps.details.features]]
+text = "Opens files from RC4 to AES-256 encryption and honors the author's permissions."
+title = "Built-in security"
+
+[[apps]]
+id = "wordcraft"
+name = "WordCraft"
+tagline = "Writing and document design"
+color = [63, 95, 224]
+ink_light = [42, 68, 184]
+ink_dark = [142, 162, 255]
+repo = "mclsrr/wordcraft"
+former_ids = []
+former_names = []
+former_bundles = []
+kind = "official"
+publisher = "mclsrr"
+msi_publisher = "Learning Machines LLC"
+site = "https://github.com/mclsrr/wordcraft"
+mac_bundle_name = "WordCraft"
+
+[apps.details]
+headline = "The familiar word processor, native and offline."
+about = "A word processor with the ribbon, shortcuts and behavior you already know. Open source, and built from public specifications."
+platforms = "macOS, Windows, Linux, BSD, web"
+[[apps.details.features]]
+text = "Ribbon tabs and groups, a live Styles gallery and the editing behavior you expect, from list continuation to Format Painter."
+title = "Familiar"
+[[apps.details.features]]
+text = "Opens and saves .docx, and also .odt, .rtf, .html, .md, .tex and .txt. Opens older .doc files and exports PDF with real, selectable text."
+title = "Your files"
+[[apps.details.features]]
+text = "Paragraph layout is cached, so typing stays responsive even in long documents."
+title = "Fast"
+[[apps.details.features]]
+text = "Spelling, grammar and everything else work offline."
+title = "Private"
+[[apps.details.features]]
+text = "Work on macOS, Windows, Linux, BSD and the web."
+title = "Everywhere"
+[[apps.details.features]]
+text = "Every action is a command, driven from the ribbon, shortcuts, a command-line tool, a JSON control channel or an MCP server."
+title = "Built for agents"
+[[apps.details.shots]]
+caption = "The Home tab and the Navigation pane"
+key = "hero"
+[[apps.details.shots]]
+caption = "Track Changes and comments"
+key = "review"
+[[apps.details.shots]]
+caption = "The Design tab"
+key = "design"
+[[apps.details.shots]]
+caption = "The Layout tab"
+key = "layout"
+
+[[apps]]
+id = "gridcraft"
+name = "GridCraft"
+tagline = "Spreadsheets and data"
+color = [31, 157, 85]
+ink_light = [18, 112, 58]
+ink_dark = [79, 214, 138]
+repo = "mclsrr/gridcraft"
+former_ids = []
+former_names = []
+former_bundles = []
+kind = "official"
+publisher = "mclsrr"
+msi_publisher = "Learning Machines LLC"
+site = "https://github.com/mclsrr/gridcraft"
+mac_bundle_name = "GridCraft"
+
+[apps.details]
+headline = "Spreadsheets you already know how to use."
+about = "A spreadsheet with the ribbon, formula bar, sheet tabs and shortcuts you know. No subscription, no license server and no telemetry."
+platforms = "macOS, Windows, Linux, BSD, web"
+[[apps.details.features]]
+text = "The ribbon, formula bar, Name Box, fill handle, point-mode formulas, Format Cells, Paste Special, conditional formatting, tables and charts."
+title = "Familiar"
+[[apps.details.features]]
+text = "XLSX is the native format, with formulas, tables, conditional formats, charts, pivot tables and print settings round-tripping. CSV and TSV too."
+title = "Compatible"
+[[apps.details.features]]
+text = "A dependency-graph calculation engine with dynamic arrays, LET and LAMBDA, structured table references, sort, AutoFilter and Flash Fill."
+title = "Capable"
+[[apps.details.features]]
+text = "Copy-on-write workbooks, incremental recalculation and a grid that only lays out what is on screen."
+title = "Fast"
+[[apps.details.features]]
+text = "Every ribbon button, menu item, dialog and keystroke is a command, available over a JSON control channel, an MCP server or the CLI."
+title = "Agent-native"
+[[apps.details.features]]
+text = "Work on the desktop and the web."
+title = "Everywhere"
+[[apps.details.shots]]
+caption = "A quarterly sales dashboard"
+key = "hero"
+[[apps.details.shots]]
+caption = "A household budget"
+key = "budget"
+[[apps.details.shots]]
+caption = "A pivot table"
+key = "pivot"
+[[apps.details.shots]]
+caption = "Formatting a chart"
+key = "chart"
